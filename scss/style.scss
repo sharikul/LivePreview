@@ -8,6 +8,16 @@ $ws: whitesmoke;
 $source_code: source-code-pro, sans-serif;
 $main: open-sans, sans-serif;
 
+/*
+  DEFINITION FOR EACH MEDIA QUERY BREAKPOINT (FROM SIZE.SCSS)
+  
+  @include size(small) => @media (max-width: 400px)
+  @include size(almost_medium) => @media (min-width: 400px) and (max-width: 760px)
+  @include size(medium) => @media (min-width: 760px) and (max-width: 1030px)
+  @include size(large) => @media (min-width: 1030px)
+  
+ */
+
 body {
 
   min-height: 100%;
