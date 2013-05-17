@@ -1,0 +1,19 @@
+@mixin size($size) {
+	@if $size == small {
+		@media (max-width:400px) {
+			@content;
+		}
+	} @else if $size == almost_medium {
+		@media (min-width:400px) and (max-width:760px) {
+			@content;
+		}
+	} @else if $size == medium {
+		@media (min-width:760px) and (max-width:1030px) {
+			@content;
+		}
+	} @else if $size == large {
+		@media (min-width:1030px) {
+			@content;
+		}
+	}
+}
