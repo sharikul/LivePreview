@@ -16,4 +16,6 @@ body {
     /* This will change to background: lightgray;*/
 }</pre>
 
-It will be processed in real time and your changes will be visible on the fly. **Please remember to define your variables at the very top of the CSS box before adding any import statements or else the engine will fail to process the variables. Also remember to use the equals notation, not colon!**.
+It will be processed in real time and your changes will be visible on the fly. **Please remember to define your variables at the very top of the CSS box before adding any import statements or else the engine will fail to process the variables. Also remember to use the equals notation, not colon!**.  
+
+Also, you cannot use numbers in your variable names. 
