@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function(){
             // get all instances where a variable is included in a property declaration, e.g. background: $lg;
         var instances = e.match(/[A-z\-]+[:][\s+]?[\-]?[A-z-?(?,?\s+?\$)?0-9?]+/g),
           // get the instances where the variable has been defined with a value, e.g. $lg = lightgray;
-          set = e.match(/\$[A-z]+[\s+]?[=][\s+]?[#]?["]?[A-z0-9\s+\,\-]+["]?/g);
+          set = e.match(/\$[A-z]+[\s+]?[=][\s+]?[#]?["]?[']?[A-z0-9\s+\,\-]+["]?[']?/g);
 
           // create an empty settings array for later use
         var settings = [];
@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
    // CodeMirror the CSS textarea. 
    var cssinput =  CodeMirror.fromTextArea(css, {
-    mode: "css",
+    mode: "text/x-scss",
     value: this.value, 
     lineWrapping: true
    });
