@@ -5,6 +5,8 @@ document.addEventListener("DOMContentLoaded", function(){
         frame = document.getElementById("frame"), 
         head = frame.contentDocument.head, 
         body_win = frame.contentDocument.body;
+        
+        // the sass function processes variables
 
         function sass(e) {
           if(e.match(/\$[A-z]+[\s+]?[=][\s+]?[#]?["]?[A-z0-9\s+\,\-]+["]?/g)) {
