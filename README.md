@@ -8,7 +8,7 @@ LivePreview is a front end playground for HTML and CSS. It aims to be really sim
 ## Update to CSS engine - 20/05/2013 (UK Timestamp)
 LivePreview's CSS processor now allows you to reference values using variables, starting with the `$` symbol. Here's how you may go about using it:  
 
-```css
+```scss
 $lg = lightgray;
 @import url(url-to-css-file-here-this-is-optional)
 
