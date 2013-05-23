@@ -22,12 +22,12 @@ $main_font = 'Open Sans', sans-serif;
 $second_font = serif;
 
 body {
-    background-color: $ws; //this will render into background-color: whitesmoke;
-    font-family: $main_font;
+    background-color: $ws; // this will render into background-color: whitesmoke;
+    font-family: $main_font; // this will render into font-family: 'Open Sans', sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: $second_font;
+    font-family: $second_font; // this will render into font-family: serif;
 }
 ```
 
