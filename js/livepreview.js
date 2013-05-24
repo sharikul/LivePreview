@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function(){
         var instances = e.match(/[A-z\-]+[:][\s+]?[\-]?[A-z-?(?,?\s+?\$)?0-9?]+/g),
         
           // get the instances where the variable has been defined with a value, e.g. $lg = lightgray; The regex string also matches rgba value settings
-          set = e.match(/\$[A-z]+[\s+]?[=][\s+]?[#]?[()A-z0-9\s+\,\-\'\"]+/g);
+          set = e.match(/\$[A-z]+[\s+]?[=][\s+]?[#]?[()A-z0-9\s+\,\-\'\"\.]+/g);
 
           // create an empty settings array for later use
         var settings = [];
