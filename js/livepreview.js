@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function(){
         // the sass function processes variables
 
         function sass(e) {
-          if(e.match(/\$[A-z]+[\s+]?[=][\s+]?[#]?["]?[A-z0-9\s+\,\-]+["]?/g)) {
+          if(e.match(/\$[A-z]+[\s+]?[=][\s+]?[#]?[()A-z0-9\s+\,\-\'\"\.]+/g)) {
 
             // get all instances where a variable is included in a property declaration, e.g. background: $lg;
         var instances = e.match(/[A-z\-]+[:][\s+]?[\-]?[A-z-?(?,?\s+?\$)?0-9?]+/g),
