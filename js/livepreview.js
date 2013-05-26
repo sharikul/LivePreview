@@ -6,6 +6,10 @@ document.addEventListener("DOMContentLoaded", function(){
         head = frame.contentDocument.head, 
         body_win = frame.contentDocument.body;
         
+        // Extend the height of the iFrame to the size of the window. Webkit browsers are able to stretch the height of the iFrame to 100% of window, but Firefox and IE have issues. This resolves it.
+        
+        frame.style.height = window.innerHeight+"px";
+        
         // the sass function processes variables
 
         function sass(e) {
