@@ -129,9 +129,9 @@ document.addEventListener("DOMContentLoaded", function(){
       localStorage.setItem("css_val", cssinput.getValue());
 
       // Replace line breaks with nothing to prevent <br> tags being created in the iFrame's style tag
-      style.innerText = sass(localStorage.getItem("css_val").replace(/\n/g, ""));
+      style.textContent = sass(localStorage.getItem("css_val").replace(/\n/g, ""));
     } else {
-      style.innerText = sass(cssinput.getValue().replace(/\n/g, ""));
+      style.textContent = sass(cssinput.getValue().replace(/\n/g, ""));
     }
       
    }
@@ -151,9 +151,9 @@ document.addEventListener("DOMContentLoaded", function(){
 
         // Apply styling in the iFrame
         if (localStorage.getItem("css_val").match(/\$[A-z]+[\s+]?[=][\s+]?[#]?["]?[A-z0-9\s+\,\-]+["]?/g)) {
-          style.innerText = sass(localStorage.getItem("css_val").replace(/\n/g, ""));
+          style.textContent = sass(localStorage.getItem("css_val").replace(/\n/g, ""));
         } else {
-          style.innerText = localStorage.getItem("css_val").replace(/\n/g, "");
+          style.textContent = localStorage.getItem("css_val").replace(/\n/g, "");
         }
     }
   } else {
@@ -161,7 +161,7 @@ document.addEventListener("DOMContentLoaded", function(){
         // This code block will run if local storage isn't supported
         iframe_text.innerHTML = hinput.getValue();
 
-        style.innerText = cssinput.getValue().replace(/\n/g, "");
+        style.textContent = cssinput.getValue().replace(/\n/g, "");
 
       }
   body_win.appendChild(iframe_text);

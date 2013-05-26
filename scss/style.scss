@@ -1,9 +1,10 @@
 /*! CSS file by Sharikul Islam for LivePreview. (c) 2013 */
 @import "compass";
 @import "compass/reset";
-@import "compass/size";
+@import "size";
 $lg: lightgray;
 $ws: whitesmoke;
+$experimental-support-for-svg: true;
 
 $source_code: source-code-pro, sans-serif;
 $main: open-sans, sans-serif;
