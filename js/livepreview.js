@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function(){
           // split the settings by an equal, so $lg = lightgray becomes ["$lg", "lightgray"]
         var split_settings = set[i].split("=");
 
-        // index the settings in the settings array, so $lg = lightgray appears as settings["$lg"] = "lightgray". Also trim any whitespace
+        // index the settings in the settings array, so $lg = lightgray appears as settings["$lg"] = "lightgray". Also trim any whitespace and replace semi colon from value.
         settings[split_settings[0].replace(/^\s+/g, "").replace(/\s+$/g, "").replace(/[;]/g, "")] = split_settings[1].replace(";", "").replace(/^\s+/g, "").replace(/\s+$/g, "");
 
         // make the changes visible in the passed parameter

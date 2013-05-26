@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/style.css">
 
     <!-- Load the LivePreview JavaScript file. This contains code functionality that's relevant to LivePreview. -->
-    <script src="js/livepreview.js"></script>
+    <script src="js/livepreview.min.js"></script>
 
     <!-- Load the minified CodeMirror file. If this doesn't load, the textareas won't have CodeMirror magic applied to them! -->
     <script src="js/codemirror.min.js"></script>
@@ -17,11 +17,6 @@
     <script src="//use.edgefonts.net/source-code-pro;open-sans.js"></script>
     <title>LivePreview - A front end playground</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <script>
-    document.addEventListener("DOMContentLoaded", function() {
-            document.getElementById("frame").style.height = window.innerHeight+"px";
-        }, false);
-    </script>
 </head>
 <body>
     <div id="boxes">
@@ -40,7 +35,7 @@
             Built by <a href="http://sharikul.comyr.com" target="_blank">Sharikul Islam</a> (<a href="http://twitter.com/sharrikul" target="_blank">@sharrikul</a>) in 2013. <a href="https://github.com/sharikul/LivePreview" target="_blank">Contribute to LivePreview on GitHub</a>.
         </footer>
     </div>
-    <!-- The iFrame is the most important element in LivePreview -->
+
     <iframe id="frame"></iframe>
 </body>
 </html>

@@ -33,5 +33,3 @@ h1, h2, h3, h4, h5, h6 {
 
 The variables will be processed in **real time** and the values will be added to the properties which you've assigned variables to, provided that you have defined them first!  
 
-**Please declare your variables AT THE VERY TOP of the _CSS Box_, before any `@import` statements, otherwise the engine will fail to process them.**
-
