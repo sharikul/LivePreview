@@ -12,10 +12,10 @@ document.addEventListener("DOMContentLoaded", function(){
           if(e.match(/\$[A-z]+[\s+]?[=][\s+]?[#]?[()A-z0-9\s+\,\-\'\"\.]+/g)) {
 
             // get all instances where a variable is included in a property declaration, e.g. background: $lg;
-        var instances = e.match(/[A-z\-]+[:][\s+]?[\-]?[A-z-?(?,?\s+?\$)?0-9?]+/g),
+        var instances = e.match(/[A-z\-]+[:][\s+]?[\-]?[A-z-?%?(?,?\s+?\$)?0-9?]+/g),
         
           // get the instances where the variable has been defined with a value, e.g. $lg = lightgray; The regex string also matches rgba value settings
-          set = e.match(/\$[A-z]+[\s+]?[=][\s+]?[#]?[()A-z0-9\s+\,\-\'\"\.]+/g);
+          set = e.match(/\$[A-z]+[\s+]?[=][\s+]?[#]?[()A-z0-9\s+\,\-\'\"\.]+[;]/g);
 
           // create an empty settings array for later use
         var settings = [];
@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function(){
         var split_settings = set[i].split("=");
 
         // index the settings in the settings array, so $lg = lightgray appears as settings["$lg"] = "lightgray". Also trim any whitespace
-        settings[split_settings[0].replace(/^\s+/g, "").replace(/\s+$/g, "").replace(/[;]/g, "")] = split_settings[1].replace(/^\s+/g, "").replace(/\s+$/g, "");
+        settings[split_settings[0].replace(/^\s+/g, "").replace(/\s+$/g, "").replace(/[;]/g, "")] = split_settings[1].replace(";", "").replace(/^\s+/g, "").replace(/\s+$/g, "");
 
         // make the changes visible in the passed parameter
         e = e.replace(set[i], "");
@@ -45,15 +45,15 @@ document.addEventListener("DOMContentLoaded", function(){
           }
         }
       }
-        // semi colons are produced at the start of each string because they're left behind when the settings are replaced. search and replace them.
-        var remove_scolons = e.match(/[;\s+]+/g)[0];
+      
 
-        // return the passed parameter with the semi colons at the start removed.
-        return e.replace(remove_scolons, "");
+        // trim the parameter string before returning
+        return e.replace(/^\s+/, "").replace(/\s+$/, "");
         } else {
           return e;
         }
       }
+
 
 
     // Check for local storage capabilities in the user's browser and other stuff
