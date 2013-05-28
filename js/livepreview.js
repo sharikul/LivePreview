@@ -9,6 +9,11 @@ document.addEventListener("DOMContentLoaded", function(){
         // Extend the height of the iFrame to the size of the window. Webkit browsers are able to stretch the height of the iFrame to 100% of window, but Firefox and IE have issues. This resolves it.
         
         frame.style.height = window.innerHeight+"px";
+
+
+        // Extend the height of the left panel to 100% height of browser window on time of load. This should help ensure better compatibility throughout browsers across a wide range of browsers.
+        document.getElementById("boxes").style.height = window.innerHeight+"px";
+        document.getElementById("boxes").style.top = "0px";
         
         // the sass function processes variables
 
@@ -98,8 +103,8 @@ document.addEventListener("DOMContentLoaded", function(){
      var html_input = document.querySelectorAll(".CodeMirror")[0], 
          css_input = document.querySelectorAll(".CodeMirror")[1];
 
-     html_input.setAttribute("id", "html");
-     css_input.setAttribute("id", "css");
+     html_input.setAttribute("name", "html");
+     css_input.setAttribute("name", "css");
 
     var style = document.createElement("style"),
         iframe_text = document.createElement("div");
@@ -129,9 +134,9 @@ document.addEventListener("DOMContentLoaded", function(){
       localStorage.setItem("css_val", cssinput.getValue());
 
       // Replace line breaks with nothing to prevent <br> tags being created in the iFrame's style tag
-      style.textContent = sass(localStorage.getItem("css_val").replace(/\n/g, ""));
+      style.textContent = sass(localStorage.getItem("css_val"));
     } else {
-      style.textContent = sass(cssinput.getValue().replace(/\n/g, ""));
+      style.textContent = sass(cssinput.getValue());
     }
       
    }
@@ -151,9 +156,9 @@ document.addEventListener("DOMContentLoaded", function(){
 
         // Apply styling in the iFrame
         if (localStorage.getItem("css_val").match(/\$[A-z]+[\s+]?[=][\s+]?[#]?["]?[A-z0-9\s+\,\-]+["]?/g)) {
-          style.textContent = sass(localStorage.getItem("css_val").replace(/\n/g, ""));
+          style.textContent = sass(localStorage.getItem("css_val"));
         } else {
-          style.textContent = localStorage.getItem("css_val").replace(/\n/g, "");
+          style.textContent = localStorage.getItem("css_val");
         }
     }
   } else {
@@ -161,7 +166,7 @@ document.addEventListener("DOMContentLoaded", function(){
         // This code block will run if local storage isn't supported
         iframe_text.innerHTML = hinput.getValue();
 
-        style.textContent = cssinput.getValue().replace(/\n/g, "");
+        style.textContent = cssinput.getValue();
 
       }
   body_win.appendChild(iframe_text);

@@ -318,10 +318,6 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {color: #f22;}
     background: darken($ws, 4%);
     padding: 10px 15px;
     border-right: 1px solid $lg;
-    bottom: 0;
-    height: 100%;
-    display: inline-block;
-    float: left;
     position: absolute;
     @include size(small) {
       width: 100%;
@@ -377,10 +373,7 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {color: #f22;}
 }
 #frame {
     width: 54%;
-    @include box-sizing(border-box);
-    display: inline-block;
     float: right;
-    height: 100%; 
 
     @include size(small) {
       width: 100%;
@@ -427,6 +420,6 @@ textarea, .CodeMirror {
     }
     text-transform: uppercase;
     color: white;
-    content: attr(id);
+    content: attr(name);
     }
 }
