@@ -96,7 +96,7 @@ document.addEventListener("DOMContentLoaded", function(){
    var cssinput =  CodeMirror.fromTextArea(css, {
     mode: "text/x-scss",
     value: this.value, 
-    lineWrapping: true,
+    lineWrapping: true
    });
 
     // Save references to the CodeMirror instances of the two textareas
