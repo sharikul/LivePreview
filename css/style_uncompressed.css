@@ -434,10 +434,6 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
     background:#ebebeb;
     padding:10px 15px;
     border-right:1px solid #d3d3d3;
-    bottom:0;
-    height:100%;
-    display:inline-block;
-    float:left;
     position:absolute;
 }
 
@@ -512,12 +508,7 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
 
 }#frame {
     width:54%;
-    -webkit-box-sizing:border-box;
-    -moz-box-sizing:border-box;
-    box-sizing:border-box;
-    display:inline-block;
     float:right;
-    height:100%;
 }
 
 @media (max-width: 400px) {
@@ -573,8 +564,5 @@ textarea:before, .CodeMirror:before {
     font-size:1.5em;
     text-transform:uppercase;
     color:white;
-    content:attr(id);
+    content:attr(name);
 }
-
-
-

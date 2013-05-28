@@ -96,7 +96,7 @@ document.addEventListener("DOMContentLoaded", function(){
    var cssinput =  CodeMirror.fromTextArea(css, {
     mode: "text/x-scss",
     value: this.value, 
-    lineWrapping: true
+    lineWrapping: true,
    });
 
     // Save references to the CodeMirror instances of the two textareas
@@ -134,9 +134,10 @@ document.addEventListener("DOMContentLoaded", function(){
       localStorage.setItem("css_val", cssinput.getValue());
 
       // Replace line breaks with nothing to prevent <br> tags being created in the iFrame's style tag
-      style.textContent = sass(localStorage.getItem("css_val"));
+      style.textContent = sass(localStorage.getItem("css_val")).replace(/\n{3,}/g, "\n\n");
     } else {
-      style.textContent = sass(cssinput.getValue());
+      // Replace multiple line breaks, at least three, with two line breaks. This should be enough to distinguish between lines. Same theory applies to other instances of this Regular Expression
+      style.textContent = sass(cssinput.getValue()).replace(/\n{3,}/g, "\n\n");
     }
       
    }
@@ -156,9 +157,9 @@ document.addEventListener("DOMContentLoaded", function(){
 
         // Apply styling in the iFrame
         if (localStorage.getItem("css_val").match(/\$[A-z]+[\s+]?[=][\s+]?[#]?["]?[A-z0-9\s+\,\-]+["]?/g)) {
-          style.textContent = sass(localStorage.getItem("css_val"));
+          style.textContent = sass(localStorage.getItem("css_val")).replace(/\n{3,}/g, "\n\n");
         } else {
-          style.textContent = localStorage.getItem("css_val");
+          style.textContent = localStorage.getItem("css_val").replace(/\n{3,}/g, "\n\n");
         }
     }
   } else {
@@ -166,7 +167,7 @@ document.addEventListener("DOMContentLoaded", function(){
         // This code block will run if local storage isn't supported
         iframe_text.innerHTML = hinput.getValue();
 
-        style.textContent = cssinput.getValue();
+        style.textContent = cssinput.getValue().replace(/\n{3,}/g, "\n\n");
 
       }
   body_win.appendChild(iframe_text);
