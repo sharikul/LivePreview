@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function(){
         // the sass function processes variables
 
         function sass(e) {
-          if(e.match(/\$[A-z]+[\s+]?[=][\s+]?[#]?[()A-z0-9\s+\,\-\'\"\.]+/g)) {
+          if(e.match(/\$[A-z]+[\s+]?[=][\s+]?[#]?[()A-z0-9\s+\,\-\'\"\.]+[;]/g) && e.match(/[A-z\-]+[:][\s+]?[\-]?[A-z-?%?(?,?\s+?\$)?0-9?]+/g)) {
 
             // get all instances where a variable is included in a property declaration, e.g. background: $lg;
         var instances = e.match(/[A-z\-]+[:][\s+]?[\-]?[A-z-?%?(?,?\s+?\$)?0-9?]+/g),
@@ -89,14 +89,18 @@ document.addEventListener("DOMContentLoaded", function(){
    var hinput = CodeMirror.fromTextArea(html, {
         mode: "htmlmixed",
         value: this.value,
-        lineWrapping: true
+        lineWrapping: true,
     });
 
    // CodeMirror the CSS textarea. 
    var cssinput =  CodeMirror.fromTextArea(css, {
     mode: "text/x-scss",
     value: this.value, 
-    lineWrapping: true
+    lineWrapping: true,
+    matchBrackets: true,
+    autoCloseBrackets: true,
+    indentWithTabs: true,
+    tabSize: 2
    });
 
     // Save references to the CodeMirror instances of the two textareas
