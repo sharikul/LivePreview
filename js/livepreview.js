@@ -9,11 +9,6 @@ document.addEventListener("DOMContentLoaded", function(){
         // Extend the height of the iFrame to the size of the window. Webkit browsers are able to stretch the height of the iFrame to 100% of window, but Firefox and IE have issues. This resolves it.
         
         frame.style.height = window.innerHeight+"px";
-
-
-        // Extend the height of the left panel to 100% height of browser window on time of load. This should help ensure better compatibility throughout browsers across a wide range of browsers.
-        document.getElementById("boxes").style.height = window.innerHeight+"px";
-        document.getElementById("boxes").style.top = "0px";
         
         // the sass function processes variables
 
