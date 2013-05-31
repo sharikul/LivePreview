@@ -85,6 +85,7 @@ document.addEventListener("DOMContentLoaded", function(){
         mode: "htmlmixed",
         value: this.value,
         lineWrapping: true,
+        profile: 'xhtml'
     });
 
    // CodeMirror the CSS textarea. 
@@ -95,7 +96,7 @@ document.addEventListener("DOMContentLoaded", function(){
     matchBrackets: true,
     autoCloseBrackets: true,
     indentWithTabs: true,
-    tabSize: 2
+    tabSize: 2,
    });
 
     // Save references to the CodeMirror instances of the two textareas
