@@ -1,5 +1,5 @@
 # LivePreview
-LivePreview is a front end playground for HTML and CSS. It's a great tool if you've suddenly got an idea you'd like to quickly jot down without having to get a development environment set up. Play around with it on <a href="http://livepreview.webege.com">livepreview.webege.com</a>. Help make LivePreview better by contributing to this repo. 
+LivePreview is a front end playground for HTML and CSS. It's a great tool if you've suddenly got an idea you'd like to quickly jot down without having to get a development environment set up. Play around with it on <a href="http://livepreview.netlify.app">livepreview.webege.com</a>. Help make LivePreview better by contributing to this repo. 
 
 ![LivePreview logo](https://raw.github.com/sharikul/LivePreview/master/imgs/icon.png)
 
