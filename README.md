@@ -4,7 +4,7 @@ LivePreview is a front end playground for HTML and CSS. It's a great tool if you
 ![LivePreview logo](https://raw.github.com/sharikul/LivePreview/master/imgs/icon.png)
 
 ### HTML Box
-LivePreview's _HTML Box_ is where you write all of the HTML code (<em>obviously</em>) that will be rendered in the _pallet_ on the right. Though you can, you aren't required to add things like `<!DOCTYPE>` or `<html>` tags because those are pre-rendered for you. The text editor can also help with indentation, too, with great syntax highlighting. **As of 31st May 2013, Emmet (Zen Coding) is also available. Type in the name of a tag and press tab your keyboard to expand!**
+LivePreview's _HTML Box_ is where you write all of the HTML code (<em>obviously</em>) that will be rendered in the _pallet_ on the right. Though you can, you aren't required to add things like `<!DOCTYPE>` or `<html>` tags because those are pre-rendered for you. The text editor can also help with indentation too with great syntax highlighting. **As of 31st May 2013, Emmet (Zen Coding) is also available. Type in the name of a tag and press tab on your keyboard to expand!**
 
 ### CSS Box
 Almost likewise to the _HTML Box_, LivePreview's _CSS Box_ is where you write all of the necessary CSS code that will style the elements in the _pallet_. You're able to use `@import` statements too if you need to do so to include external CSS stylesheets in your work.  
